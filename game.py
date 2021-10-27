@@ -90,7 +90,7 @@ class Bird:
         rotated_image = pygame.transform.rotate(self.img, self.tilt)
         new_rectangle = rotated_image.get_rect(center=self.img.get_rect(topleft=(self.x, self.y)).center)
 
-        # drwing on the screen
+        # drwing the bird on screen
         win.blit(rotated_image, new_rectangle.topleft)
     
     def get_mask(self):
@@ -98,27 +98,27 @@ class Bird:
 
 # draw the background image and the bird
 def draw_window(win, bird):
-    win.blit(BACKGROUND_IMG, (0,0))
-    bird.draw(win)
-    pygame.display.update()
+    win.blit(BACKGROUND_IMG, (0,0)) # draw the background with the topleft corner as the initial point
+    bird.draw(win) # call the draw method on bird object
+    pygame.display.update() # update the screen
 
 # main function is the one that really run the game looping
 def main():
-    clock = pygame.time.Clock()
-    bird = Bird(200, 200)
-    win = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-    run = True
+    clock = pygame.time.Clock() # create a clock type object that will control the game fps
+    bird = Bird(200, 200) # make the bird object
+    win = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT)) # set the main window
+    run = True # set the main loop condition variable
 
-    while run:
-        clock.tick(30)
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                run = False
+    while run: # initializes the loop
+        clock.tick(60) # set the frame to 30fps
+        for event in pygame.event.get(): # for each event(like mouse click, etc...) on game
+            if event.type == pygame.QUIT: # if the event is that user click the big red X on top right corner
+                run = False # set the loop condition variable to false and ends the loop
 
-        bird.move()
-        draw_window(win, bird)
+        bird.move() # move the bird
+        draw_window(win, bird) # draw the bird movement on the screen
 
-    pygame.quit()
-    quit()
+    pygame.quit() # quit the game
+    quit() # qui the window
 
 main()
