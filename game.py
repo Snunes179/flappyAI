@@ -8,6 +8,7 @@ pygame.font.init()
 # define global variables
 WINDOW_WIDTH = 500 # window width size
 WINDOW_HEIGHT = 800 # window height size
+zenAntique = os.path.abspath("ZenAntique-Regular.ttf")
 
 GEN = 0
 
@@ -19,7 +20,7 @@ BIRD_IMGS = [ # load every bird image in the 'imgs' folder and scale 2x
 PIPE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'pipe.png'))) # load the pipe img and scale 2x
 BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'base.png'))) # load the base img and scale 2x
 BACKGROUND_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'background.png'))) # load the background img and scale 2x
-STAT_FONT = pygame.font.SysFont("comicsans", 50)
+STAT_FONT = pygame.font.Font(zenAntique, 50)
 
 # bird object class
 class Bird:
@@ -199,7 +200,7 @@ def fitnessFunction(genomes, config):
     nets = []
     ge = []
     birds = [] # make the bird object
-    fps = 30
+    fps = 60
     
     for _, g in genomes:
         net = neat.nn.FeedForwardNetwork.create(g, config)
