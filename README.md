@@ -29,4 +29,4 @@
 ## python game.py
 
 
-#Thanks and have fun!
+# Thanks and have fun!
