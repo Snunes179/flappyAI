@@ -12,21 +12,21 @@
 ### first of all go to the project folder in your computer using a terminal like Hyper, CMD, Bash or the VSCode Terminal
 ### then run the next command line
 
-##"python -m virtualenv venv"
+## python -m virtualenv venv
 
 ### this will create a "venv" folder in project
 ### to activate this virtual enviorment run the next command
 
-##"venv\Scripts\activate"
+## venv\Scripts\activate
 
 ### this should activate your virtual enviorment
 ### then now you can install the project dependencies
 
-##"pip install -r requirements.txt"
+## pip install -r requirements.txt 
 
 ### after complete, is just run and have fun watching a AI playing Flappy Bird
 
-##"python game.py"
+** python game.py **
 
 
 #Thanks and have fun!
