@@ -26,7 +26,7 @@
 
 ### after complete, is just run and have fun watching a AI playing Flappy Bird
 
-** python game.py **
+## python game.py
 
 
 #Thanks and have fun!
